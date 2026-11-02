@@ -3,6 +3,9 @@
 ## AIM:
 To Implement RSA Encryption Algorithm in Cryptography
 
+### DEVELOPER: ADITHYA NM
+### REG NO: 212225040011
+
 ## Algorithm:
 
 
@@ -37,11 +40,39 @@ The security of RSA relies on the difficulty of factoring large numbers; thus, c
 
 ## Program:
 
+```
+#include <stdio.h>
 
+int main()
+{
+    int p = 3, q = 11;
+    int n, phi, e = 3, d = 7;
+    int msg, encrypted, decrypted;
 
+    n = p * q;
+    phi = (p - 1) * (q - 1);
+    printf("Developer: ADITHYA NM\n");
+    printf("Enter a message (number): ");
+    scanf("%d", &msg);
+
+    encrypted = 1;
+    for (int i = 0; i < e; i++)
+        encrypted = (encrypted * msg) % n;
+
+    decrypted = 1;
+    for (int i = 0; i < d; i++)
+        decrypted = (decrypted * encrypted) % n;
+    printf("Public Key: (%d, %d)\n", e, n);
+    printf("Private Key: (%d, %d)\n", d, n);
+    printf("Encrypted message: %d\n", encrypted);
+    printf("Decrypted message: %d\n", decrypted);
+
+    return 0;
+}
+```
 
 ## Output:
-
+<img width="300" height="182" alt="image" src="https://github.com/user-attachments/assets/c43f0086-058f-48d1-86f9-88e4636fa3a6" />
 
 
 ## Result:
